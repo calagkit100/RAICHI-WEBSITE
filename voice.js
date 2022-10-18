@@ -33,7 +33,7 @@ recognition.onresult = async() => {
     
     const value = transcript;
     let conversation = "";
-    conversation += "Human: " + transcript + "\nAI: ";
+    conversation += "Human: " + value + "\nAI: ";
     const res = await fetch("https://thesis-server-kit.herokuapp.com/complete", {
 //     const res = await fetch("http://localhost:3000/complete", {
         body: JSON.stringify({
