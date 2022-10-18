@@ -13,6 +13,7 @@ const recognition = new speechRecognition();
 recognition.onresult = function(event) {
     let current = event.resultIndex;
     let transcript = event.results[current][0].transcript;
+    conversation += "Human: " + transcript + "\nAI: ";
     console.log(transcript);
 }
 
