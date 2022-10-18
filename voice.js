@@ -13,7 +13,6 @@ const recognition = new speechRecognition();
 recognition.onresult = function(event) {
     let current = event.resultIndex;
     let transcript = event.results[current][0].transcript;
-    conversation += "Human: " + transcript + "\nAI: ";
     console.log(transcript);
 }
 
@@ -31,7 +30,10 @@ recognition.onresult = async() => {
     const transcript = event.results[current][0].transcript;
     console.log(transcript);
 
+    
     const value = transcript;
+    let conversation = "";
+    conversation += "Human: " + transcript + "\nAI: ";
     const res = await fetch("https://thesis-server-kit.herokuapp.com/complete", {
 //     const res = await fetch("http://localhost:3000/complete", {
         body: JSON.stringify({
