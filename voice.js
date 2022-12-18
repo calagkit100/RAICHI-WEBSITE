@@ -10,7 +10,7 @@ const speechRecognition =
 
 const recognition = new speechRecognition();
 
-recognition.onresult = function(event) {
+recognition.onresult = function (event) {
     let current = event.resultIndex;
     let transcript = event.results[current][0].transcript;
     console.log(transcript);
@@ -25,18 +25,18 @@ stopBtn.addEventListener("click", () => {
 });
 
 
-recognition.onresult = async() => {
+recognition.onresult = async () => {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
     console.log(transcript);
 
-    
+
     const value = transcript;
 
     conversation += "Human: " + value + "\nAI: ";
-    
-    const res = await fetch("https://raichiserver-production.up.railway.app", {
-    // const res = await fetch("http://localhost:3000/complete", {
+
+    // const res = await fetch("https://raichiserver-production.up.railway.app", {
+    const res = await fetch("http://localhost:3000/complete", {
         body: JSON.stringify({
             query: conversation
         }),

@@ -12,7 +12,7 @@ function init() {
     document.getElementById('msg').appendChild(res_elm);
 }
 
-sendbutton.onclick = async() => {
+sendbutton.onclick = async () => {
 
     const value = input.value;
 
@@ -34,8 +34,8 @@ sendbutton.onclick = async() => {
     mychat.classList.add("right");
     messagesContainer.appendChild(mychatContainer);
 
-    const res = await fetch("https://raichiserver-production.up.railway.app", {
-//     const res = await fetch("http://localhost:3000/complete", {
+    // const res = await fetch("https://raichiserver-production.up.railway.app", {
+    const res = await fetch("http://localhost:3000/complete", {
         body: JSON.stringify({
             query: conversation,
         }),
