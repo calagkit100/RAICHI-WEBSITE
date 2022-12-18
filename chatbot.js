@@ -34,8 +34,8 @@ sendbutton.onclick = async () => {
     mychat.classList.add("right");
     messagesContainer.appendChild(mychatContainer);
 
-    // const res = await fetch("https://raichiserver-production.up.railway.app", {
-    const res = await fetch("http://localhost:3000/complete", {
+    const res = await fetch("https://raichiserver-production.up.railway.app/complete", {
+        // const res = await fetch("http://localhost:3000/complete", {
         body: JSON.stringify({
             query: conversation,
         }),
